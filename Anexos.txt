@@ -1,0 +1,101 @@
+Para Valores " NULL " -> " - " 
+** Importación Excel - > Productos
+       -Cod (integer)->(String)
+       -Nombre
+       -Precio_venta
+       - Scrip INSERT {cantidad = 1, Estado = 1 "Activo" } 
+
+** Impotacion 
+   - Si esta registrador {Modificar}
+*Proximamente...
+  - Precio_costo 
+
+**Productos
+     *New add {Columna}
+      - % Utilidad x Productos ->{Calcular el valor en $$}{Para vendedor}
+      - modificar cantidad {Permitir editar e Insertar, productos con cantidad 0}
+
+** Facturar Venta
+   - Ingresar # Factura Manual (int)->(String)      +
+   - Fecha manual                                   +
+   - Cliente { NIT, Nombre }			    +
+   - Filtrar facturas x Vendedor {Columna iduser}   +
+   - Cambiar color de visualizacion {Columna saldo} +
+   
+     *Detalle Factura
+       - Ocutal # Factura    					 +  
+       - Cambiar color de visualizacion {Columna valor_parcial}  +
+       - Reorganizar {Cant,Des,iva,valorpacial,totalapagar}      +
+       - Guardar la utilidad en detalle de factura {tomado del productos}         +
+NOTA: Filtrado Principal por Año y Mes              +
+
+**Factura Venta
+   * Detalle FActura
+         -Revisar al ingresar un producto {tipo de datos}
+
+
+** New Add {Zona Table}						+
+     - id_zona							+
+     - Descripcion_zona						+
+     - saldo_zona {Traer de Facturas pendientes, de los clientes en las zonas} +
+          *Cliente {Add new}{Viewe}{Master.zona}
+             -idcliente						+
+             -Nombre_cliente {Posibilidad de Filtro}		+
+             -Saldo_Total_Cliente {Sumar de las facturas de los clientes "Agrupar por cliente"}  +
+** Cliente
+   * New add
+      -Clasificación x Zona {Add zona- ventana emergente, Posibilidad de Filtro}    +
+      - Saldo Total por Cliente {add columna}                                       +
+ 	
+         *Factura Ventas {Modificar}{Maestro.Cliente}
+                 - Ocultar Columna Cliente						+
+                 - Saldo {Color de Visualizacion }					+
+                 - Estado Factura {"Cancelada, Saldo Pendiente", Posibilidad de Filtro}{ Modificar desde tabla Abonos} +
+  	       
+                 NOTA: Filtrado Principal por Año y Mes					+
+                 
+                    *Detalle factura{Viewer}{Master.factura_ventas}{ Add new }   +
+                          - idproducto						+
+                          - Descripcion						+
+                          - Cantidad						+
+                          - Descuento {%}					+
+                          - Iva {%}						+
+                          - precio_venta					+
+                          - Valor_Parcial   					+
+
+**Abonos
+       -Fecha_abono {add new}         								    +
+       -Cambiar Descripcion x Observación {Al Guardar el Abono, sumar a obser. "Fecha,vendedor"}    +
+       - Quitar la ingresar 5 digitos para buscar el Cliente y factura			            +
+       - Permitir el constructor de Filtros {Entre dos fechas}     				    +
+       - Quitar accion {Editar abonos}								    +
+       - Modificar {Aciones en la tabla factura, desde eventos Before_insert}			    +
+
+
+**Vendedor {New add}{Viewer}
+  
+     -Idvendedor				+
+     -Nombre					+
+
+    *Facturas{master.vendedor}{viewer}{new add} {todas}			+
+      - #factura 							+
+      - Saldo {Color de Visualizacion }					+
+      - Estado Factura {"Abonada,Cancelada, Saldo Pendiente", Posibilidad de Filtro}{ Modificar desde tabla Abonos}	+
+      - fecha_venta													+
+      - Utilidad x Factura para vendedor {Consultar del detalle de las facturas, de los vendedores }  			+
+NOTA: Filtrado Principal por Año y Mes											+
+
+
+
+
+
+				***************  ACTIVIDADES REALIZADAS *******************
+
+
+
+
+
+
+									
+         		
+   

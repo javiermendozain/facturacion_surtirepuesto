@@ -1,0 +1,25 @@
+-- Table: importacion_excel
+
+-- DROP TABLE importacion_excel;
+
+CREATE TABLE importacion_excel
+(
+  id_importacion serial NOT NULL,
+  url_archivo character varying,
+  CONSTRAINT pkid_importacion PRIMARY KEY (id_importacion)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE importacion_excel
+  OWNER TO postgres;
+
+
+nueva columba en tabla : Productos [utilidad_para_vendedor numeric(12,0) ] 
+                       
+Nueva Tabla Zona , y columna en cliente idzona integer
+
+
+
+
+surtirepuestos

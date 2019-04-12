@@ -1,0 +1,41 @@
+
+**Aplicativo 
+   -Modificar {Las tablas, visualizacion de cuadriculas y columnas}  +
+
+** Productos
+  - add, Porcentaje de productos y utilidad independientes  +
+
+
+**Factura Venta
+   - Mostrar { contador propio }				+
+  *Detalle factura						+
+       - No permitir ingresar, si esta guardada la factura	+
+
+
+** Registrar Factura y productos, al mismo tiempo    +
+
+** Factura compra
+     *Detalle 
+        - Revisar  {codigo de producto, en (int)-> (string)} +
+        -cantidad {Modificar en productos} 		     +
+
+** Registrar Compra
+  - Mostrar {contador propio de factura compra}               +
+
+*****************************************ACTIVIDADES  REALIZADAS********************************
+
+
+
+
+**Cliente
+  - Limitar por fecha { tiempo }
+  - Cupo {$$$}   {Si es 0, no permita vender a credito}       +
+
+
+
+
+
+
+
+
+
